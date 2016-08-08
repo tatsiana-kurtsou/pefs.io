@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+<div class="container page-post">
+    <div class="row">
+        <div class="col-lg-10">
+            <article class="post">
+                <header class="post-header">
+                <h1 class="post-title">
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h1>
+                <p class="post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
+                </p>
+                </header>
+                <div class="row"><div class="post-content col-lg-10">
+                    {{ post.content | split:'<!--cut-here-->' | first }}
+                </div></div>
+            </article>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="container page-post-pager">
+    <div class="row">
+        <div class="col-lg-10">
+            {% if paginator.next_page or paginator.previous_page %}
+            <nav>
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="{{ paginator.previous_page_path }}"><i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Older</a>
+                    </li> 
+                    <li class="next">
+                        <a href="{{ paginator.next_page_path }}">Newer&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>

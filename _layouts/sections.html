@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% for sect in site[page.collection] %}
+<div class="container page-section" id="{{ sect.slug }}">
+    <div class="row">
+        <div class="col-lg-10">
+            <h1>{{ sect.title }}</h1>
+            {{ sect.content }}
+        </div>
+    </div>
+</div>
+{% endfor %}
