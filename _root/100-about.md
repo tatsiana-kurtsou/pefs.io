@@ -4,7 +4,7 @@ title_nav: About
 slug: about
 ---
 
-[PEFS (Private Encrypted File System)]({{site_url}}) is a kernel level stacked cryptographic file system for [FreeBSD](https://www.freebsd.org/). PEFS transparently encrypts data and runs on top of any existing file system. Leveraging capabilities of the underlying file system helps to reduce configuration complexity and eliminates necessity of additional storage devices. 
+[PEFS (Private Encrypted File System)]({{site.url}}) is a kernel level stacked cryptographic file system for [FreeBSD](https://www.freebsd.org/). PEFS transparently encrypts data and runs on top of any existing file system. Leveraging capabilities of the underlying file system helps to reduce configuration complexity and eliminates necessity of additional storage devices. 
 
 Primary usecase for PEFS has historically been **encryption of the user home directory**. Besides, PEFS may prove useful in the following cases: 
 
