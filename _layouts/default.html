@@ -45,8 +45,7 @@
                         {% endfor %}
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        {% if page.collection %}
-                        {% else %}
+                        {% if nav_url[1] == 'blog' %}
                         <li><a href="/">PEFS Website</a></li>
                         {% endif %}
                         <li {% if nav_url[1] == 'blog' %}class="active"{% endif %}><a href="/blog">Blog</a></li>
