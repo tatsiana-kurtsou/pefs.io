@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {% assign nav_url = page.url | split: '/' %}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="{{ site.title }}">
+        <meta property="og:image" content="http://pefs.io/assets/img/pefs_thumbnail.jpg">
+        {% if page.layout == "post" %}
+        <meta property="og:title" content="PEFS - {{ page.title }}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="{{ page.content | split:'<!--cut-here-->' | first | strip_html | strip | xml_escape }}">
+        <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+        {% else %}
         <meta property="og:title" content="PEFS - Private Encrypted File System">
         <meta property="og:url" content="http://pefs.io">
         <meta property="og:description" content="PEFS is a kernel level stacked cryptographic file system for FreeBSD. It is open source project distributed under the BSD license.">
-        <meta property="og:image" content="http://pefs.io/assets/img/pefs_thumbnail.jpg">
+        {% endif %}
 
         <title>{{ page.splash_title | default "PEFS" }}{% if page.splash_subtitle %} - {{ page.splash_subtitle }}{% endif %}</title>
 
@@ -36,7 +46,6 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
-                    {% assign nav_url = page.url | split: '/' %}
                     <ul class="nav navbar-nav">
                         {% for sect in site[page.collection] %}
                         <li>
