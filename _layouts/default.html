@@ -19,7 +19,7 @@
         <meta property="og:description" content="PEFS is a kernel level stacked cryptographic file system for FreeBSD. It is open source project distributed under the BSD license.">
         {% endif %}
 
-        <title>{{ page.splash_title | default "PEFS" }}{% if page.splash_subtitle %} - {{ page.splash_subtitle }}{% endif %}</title>
+        <title>{{ page.splash_title | default: "PEFS" }}{% if page.splash_subtitle %} - {{ page.splash_subtitle }}{% endif %}</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -81,7 +81,7 @@
                     <div class="col-lg-12">
                         <ul class="list-unstyled">
                             <li class="text-muted small pull-right"><a href="#top" class="text-muted">Back to top &nbsp; <i class="fa fa-arrow-up"></i></a></li>
-                            <li class="text-muted small ">Copyright &copy; 2016 &nbsp; <a href="http://pefs.io/" class="text-muted">pefs.io</a></li>
+                            <li class="text-muted small ">Copyright &copy; {{ site.time | date: '%Y' }} &nbsp; <a href="http://pefs.io/" class="text-muted">pefs.io</a></li>
                         </ul>
                     </div>
                 </div>
